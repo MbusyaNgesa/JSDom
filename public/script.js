@@ -86,15 +86,99 @@
 
 //QUERYSELECTORALL() //
 
-var titles = document.querySelectorAll('.title');
-console.log(titles);
+// var titles = document.querySelectorAll('.title');
+// console.log(titles);
 
-titles[0].textContent = 'Hello';
+// titles[0].textContent = 'Hello';
 
-var listItemsOdd = document.querySelectorAll('li:nth-child(odd)');
-var listItemsEven = document.querySelectorAll('li:nth-child(even)');
+// var listItemsOdd = document.querySelectorAll('li:nth-child(odd)');
+// var listItemsEven = document.querySelectorAll('li:nth-child(even)');
 
-for(var i = 0; i < listItemsOdd.length; i++){
-    listItemsOdd[i].style.backgroundColor = '#f4f4f4';
-    listItemsEven[i].style.backgroundColor = 'pink';
-}
+// for(var i = 0; i < listItemsOdd.length; i++){
+//     listItemsOdd[i].style.backgroundColor = '#f4f4f4';
+//     listItemsEven[i].style.backgroundColor = 'pink';
+// }
+
+//TRAVERSING DOM
+
+// var itemList = document.querySelector('#items');
+//calling and checking parentNode
+// console.log(itemList.parentNode);
+// itemList.parentNode.style.backgroundColor = '#ccc';
+// console.log(itemList.parentNode.parentNode);
+
+
+// //parentElement : Does same job as parent node
+// var itemList = document.querySelector('#items');
+//calling and checking parentNode
+// console.log(itemList.parentElement);
+// itemList.parentElement.style.backgroundColor = '#ccc';
+// console.log(itemList.parentElement.parentElement);
+
+//childNodes
+// console.log(itemList.childNodes);
+
+//children
+// console.log(itemList.children);
+// console.log(itemList.children[2]);
+// itemList.children[2].style.backgroundColor = 'green';
+
+//firstChild
+// console.log(itemList.firstChild);
+
+//firstElementChild
+// console.log(itemList.firstElementChild);
+// itemList.firstElementChild.textContent = 'Hey there';
+
+//lastChild
+// console.log(itemList.lastChild);
+
+//lastElementChild
+// console.log(itemList.lastElementChild);
+// itemList.lastElementChild.textContent = 'Hey there';
+
+//nextSibling
+// console.log(itemList.nextSibling);
+
+//nextElementSibling
+//console.log(itemList.nextElementSibling);
+
+//previousSibling
+// console.log(itemList.previousSibling);
+
+//previousElementSibling
+// console.log(itemList.previousElementSibling);
+// itemList.previousElementSibling.style.color = 'orange';
+// console.log(itemList.previousElementSibling.previousElementSibling);
+
+//createElement :creating a new element and inserting id,class,attributes
+var newDiv = document.createElement('div');
+
+
+//insert class
+newDiv.className = 'Hello';
+
+//insert id 
+newDiv.id = 'West';
+
+//insert attributes
+newDiv.setAttribute('title', 'Hello Div');
+
+//We are adding a textNode to the newly created div and it will be the child of this div
+//create TextNode
+var newdivText = document.createTextNode('I am the new div');
+
+//add text to div
+newDiv.appendChild(newdivText);
+
+var container = document.querySelector('header .container');
+var h1 = document.querySelector('header h1');
+
+console.log(newDiv);
+
+//container.insertBefore(newDiv, h1); //newDiv is what we are inserting, h1 is where the new div is being inserted to
+
+// var list = document.querySelector('#main') //adding it in another area(before form)
+// var form = document.querySelector('form');
+
+// list.insertBefore(newDiv, form)
