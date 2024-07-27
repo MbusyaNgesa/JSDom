@@ -229,8 +229,8 @@
 
 
 //MOUSE EVENTS
-var button = document.getElementById('button')
-var box = document.getElementById('box');
+// var button = document.getElementById('button')
+// var box = document.getElementById('box');
 
 // button.addEventListener('click', runEvent);
 // button.addEventListener('dblclick', runEvent);
@@ -245,9 +245,9 @@ var box = document.getElementById('box');
 
 // box.addEventListener('mousemove',runEvent);
 
-var itemInput = document.querySelector('input[type="text"]');
-var form = document.querySelector('form');
-var select = document.querySelector('select');
+// var itemInput = document.querySelector('input[type="text"]');
+// var form = document.querySelector('form');
+// var select = document.querySelector('select');
 
 // itemInput.addEventListener('keydown', runEvent);
 // itemInput.addEventListener('keyup', runEvent);
@@ -263,11 +263,11 @@ var select = document.querySelector('select');
 
 // select.addEventListener('change', runEvent);
 
-form.addEventListener('submit', runEvent);
+// form.addEventListener('submit', runEvent);
 
-function runEvent(e){
-    e.preventDefault();
-    console.log('Event Type:' +e.type);
+// function runEvent(e){
+//     e.preventDefault();
+//     console.log('Event Type:' +e.type);
 
     //console.log(e.target.value);
 
@@ -280,4 +280,75 @@ function runEvent(e){
 
     //box.style.backgroundColor = "rgb("+e.offsetX+", "+e.offsetY+", 40)" ;
     //document.body.style.backgroundColor = "rgb("+e.offsetX+", "+e.offsetY+", 100)" ;
+// }
+
+var forms = document.getElementById('addForm');
+var lists = document.getElementById('items');
+var filter = document.getElementById('filter');
+
+forms.addEventListener('submit', addItems); //Add item
+lists.addEventListener('click', removeItems); //Remove items
+filter.addEventListener('keyup', filterItems); //Filter items
+
+function addItems(e){
+    e.preventDefault();
+    // console.log(1);
+
+    var newItem = document.getElementById('item').value; //Get input value
+    // console.log(newItem);
+
+    //Create new li element
+    var li = document.createElement('li');
+    li.className = 'list-group-item'; //add class
+    // console.log(li);
+
+    //add text node with input value
+    li.appendChild(document.createTextNode(newItem));
+
+    lists.appendChild(li);
+
+    //Creating delete button element
+    var deleteBtn = document.createElement('button');
+    
+    //Add classes to the 'x' button
+    deleteBtn.className = 'btn2 delete';
+    
+    //Append Text Node
+    deleteBtn.appendChild(document.createTextNode('X'));
+
+    //Append button to li
+    li.appendChild(deleteBtn);
+
+    //Append li to list
+    lists.appendChild(li);
+
+}
+
+//Remove item function
+function removeItems(e){
+    if(e.target.classList.contains('btn2')){
+        if(confirm('Delete this')){
+            var li = e.target.parentElement;
+            lists.removeChild(li);
+
+        }
+    }
+}
+
+//Filter items function
+function filterItems(e){
+    //converting text to lowercase
+    var text = e.target.value.toLowerCase();
+    //Get list
+    var items = lists.getElementsByTagName('li');
+    console.log(items)
+    //Convert to an array
+    Array.from(items).forEach(function(item){
+        var itemName = item.firstChild.textContent;
+        if(itemName.toLowerCase().indexOf(text) != -1){
+            item.style.display = 'block';
+        }else{
+            item.style.display = 'none';
+        }
+    })
 }

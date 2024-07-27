@@ -75,3 +75,11 @@ input {
     height: 200px;
     background: #d9cccc;
 }
+.fil{
+    align-self: center;
+}
+.btn2{
+    background-color: red;
+    color: #fff;
+    margin-left: 10px;
+}

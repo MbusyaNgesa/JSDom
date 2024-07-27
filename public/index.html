@@ -11,6 +11,9 @@
         <div class="container">
           <h1 id="header-title">Item Lister <span style="display: none;">123</span></h1>
         </div> <!-- container-->
+        <div class="fil col-md-6 align-self-center">
+          <input type="text" class="form-control" id="filter" placeholder="Search Items...">
+      </div>
       </header>
     
       <div class="container">
@@ -18,8 +21,8 @@
     
           <h2 class="title">Add Items</h2>
     
-          <form>
-            <input type="text">
+          <form id="addForm">
+            <input type="text" id="item">
             
             <select>
               <option value="1">1</option>
@@ -33,10 +36,10 @@
           <h2 class="title">Items</h2>
     
           <ul id="items" class="list-group">
-            <li class="list-group-item">item 1</li>
-            <li class="list-group-item">item 2</li>
-            <li class="list-group-item">item 3</li>
-            <li class="list-group-item">item 4</li>
+            <li class="list-group-item">item 1 <button class="btn2 delete">X</button></li>
+            <li class="list-group-item">item 2 <button class="btn2 delete">X</button></li>
+            <li class="list-group-item">item 3 <button class="btn2 delete">X</button></li>
+            <li class="list-group-item">item 4 <button class="btn2 delete">X</button></li>
           </ul>
           <span>This is me</span>
           <div id="output"></div>
