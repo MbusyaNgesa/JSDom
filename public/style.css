@@ -64,3 +64,14 @@ input {
 .list-group-item:last-child {
     margin-bottom: 10px;
 }
+.btn1{
+    padding: 10px;
+    width: 100%;
+    background-color: #000;
+    color:#fff;   
+}
+.addBox{
+    width: 400px;
+    height: 200px;
+    background: #d9cccc;
+}

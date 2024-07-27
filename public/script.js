@@ -152,29 +152,29 @@
 // console.log(itemList.previousElementSibling.previousElementSibling);
 
 //createElement :creating a new element and inserting id,class,attributes
-var newDiv = document.createElement('div');
+//var newDiv = document.createElement('div');
 
 
 //insert class
-newDiv.className = 'Hello';
+//newDiv.className = 'Hello';
 
 //insert id 
-newDiv.id = 'West';
+//newDiv.id = 'West';
 
 //insert attributes
-newDiv.setAttribute('title', 'Hello Div');
+//newDiv.setAttribute('title', 'Hello Div');
 
 //We are adding a textNode to the newly created div and it will be the child of this div
 //create TextNode
-var newdivText = document.createTextNode('I am the new div');
+//var newdivText = document.createTextNode('I am the new div');
 
 //add text to div
-newDiv.appendChild(newdivText);
+// newDiv.appendChild(newdivText);
 
-var container = document.querySelector('header .container');
-var h1 = document.querySelector('header h1');
+// var container = document.querySelector('header .container');
+// var h1 = document.querySelector('header h1');
 
-console.log(newDiv);
+// console.log(newDiv);
 
 //container.insertBefore(newDiv, h1); //newDiv is what we are inserting, h1 is where the new div is being inserted to
 
@@ -182,3 +182,102 @@ console.log(newDiv);
 // var form = document.querySelector('form');
 
 // list.insertBefore(newDiv, form)
+
+
+//EVENTS//
+
+// function buttonClick(){
+//     console.log('Button Clicked');
+// }   Old method, in the html you'll place this in the button scope [onclick="buttonClick()"]
+
+// var button = document.getElementById('button').addEventListener
+// ('click', function(){
+//     console.log(123)
+// });
+
+// function button(){
+//     var btn = document.getElementById('button').addEventListener
+//     ('click');
+//     console.log(123);
+// }
+// console.log(button()); //Does not work, brings error, it should be written as follows
+
+// var button = document.getElementById('button').addEventListener
+// ('click', buttonClick);
+
+// function buttonClick(){
+//     console.log('Button Clicked');
+//     document.getElementById('header-title').textContent = 'Changed';
+//     document.querySelector('.title').style.color = 'blue'; 
+// }
+
+// function buttonClick(e){
+    // console.log(e.target);
+    // console.log(e.target.id);
+    // console.log(e.target.className);
+    // console.log(e.target.classList)
+
+    //var output = document.getElementById('output');
+    // output.innerHTML = '<h3>'+e.target.id+'</h3>'
+    // console.log(e.type);
+    // console.log(e.clientX);
+    // console.log(e.clientY);
+
+    // console.log(e.offsetX);
+    // console.log(e.offsetY);
+//}
+
+
+//MOUSE EVENTS
+var button = document.getElementById('button')
+var box = document.getElementById('box');
+
+// button.addEventListener('click', runEvent);
+// button.addEventListener('dblclick', runEvent);
+//button.addEventListener('mousedown', runEvent)
+// button.addEventListener('mouseup', runEvent)
+
+// box.addEventListener('mouseenter', runEvent);
+// box.addEventListener('mouseleave',runEvent);
+
+//box.addEventListener('mouseover', runEvent);
+// box.addEventListener('mouseout',runEvent);
+
+// box.addEventListener('mousemove',runEvent);
+
+var itemInput = document.querySelector('input[type="text"]');
+var form = document.querySelector('form');
+var select = document.querySelector('select');
+
+// itemInput.addEventListener('keydown', runEvent);
+// itemInput.addEventListener('keyup', runEvent);
+// itemInput.addEventListener('keypress', runEvent);
+
+// itemInput.addEventListener('focus', runEvent);
+// itemInput.addEventListener('blur', runEvent);
+
+// itemInput.addEventListener('cut', runEvent);
+// itemInput.addEventListener('paste', runEvent);
+
+// itemInput.addEventListener('input', runEvent);
+
+// select.addEventListener('change', runEvent);
+
+form.addEventListener('submit', runEvent);
+
+function runEvent(e){
+    e.preventDefault();
+    console.log('Event Type:' +e.type);
+
+    //console.log(e.target.value);
+
+    //document.body.style.display = 'none'; //make things disappear
+    // console.log(e.target.value) //logging text in input field to console
+    // document.getElementById('output').innerHTML = '<h3>'+e.target.value+'</h3>'
+
+    // output.innerHTML = '<h3>MouseX: ' +e.offsetX+ '</h3><h3>MouseY:' 
+    // +e.offsetY+'</h3>';
+
+    //box.style.backgroundColor = "rgb("+e.offsetX+", "+e.offsetY+", 40)" ;
+    //document.body.style.backgroundColor = "rgb("+e.offsetX+", "+e.offsetY+", 100)" ;
+}
